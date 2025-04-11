@@ -27,6 +27,7 @@ if [[ -z $RESULT ]]; then
   exit
 fi
 
+
 RESULT=$($PSQL "SELECT * FROM properties WHERE atomic_number=$ID;")
 IFS="|" read -r ID MASS MELT BOIL TYPE_ID <<< "$RESULT"
 
