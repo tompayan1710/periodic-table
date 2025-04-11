@@ -32,4 +32,5 @@ IFS="|" read -r ID MASS MELT BOIL TYPE_ID <<< "$RESULT"
 
 TYPE=$($PSQL "SELECT type FROM types WHERE type_id=$TYPE_ID;")
 
+
 echo "The element with atomic number $ID is $NAME ($SYMBOL). It's a $TYPE, with a mass of $MASS amu. $NAME has a melting point of $MELT celsius and a boiling point of $BOIL celsius."
