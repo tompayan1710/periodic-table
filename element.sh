@@ -28,7 +28,7 @@ if [[ -z $RESULT ]]; then
 fi
 
 RESULT=$($PSQL "SELECT * FROM properties WHERE atomic_number=$ID;")
-IFS="|" read -r ID TYPE MASS MELT BOIL TYPE_ID <<< "$RESULT"
+IFS="|" read -r ID MASS MELT BOIL TYPE_ID <<< "$RESULT"
 
 TYPE=$($PSQL "SELECT type FROM types WHERE type_id=$TYPE_ID;")
 
